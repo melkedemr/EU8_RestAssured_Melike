@@ -7,6 +7,9 @@ import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
+import static io.restassured.RestAssured.*;
+import static org.junit.jupiter.api.Assertions.*;
+
 public class SpartanGetRequests {
 
 
@@ -20,7 +23,7 @@ public class SpartanGetRequests {
     @Test
     public void test1(){
 
-        Response response = RestAssured.given().accept(ContentType.JSON)
+        Response response =given().accept(ContentType.JSON)
                 .when()
                 .get(baseUrl + "/api/spartans");
 
@@ -35,10 +38,10 @@ public class SpartanGetRequests {
 
         //how to do API testing then ?
         //verify status code is 200
-        Assertions.assertEquals(response.statusCode(),200);
+        assertEquals(response.statusCode(),200);
 
         //verify content type is application/json
-        Assertions.assertEquals(response.contentType(),"application/json");
+        assertEquals(response.contentType(),"application/json");
 
     }
 
@@ -58,10 +61,10 @@ public class SpartanGetRequests {
 
 
         //verify status code 200
-        Assertions.assertEquals(200,response.statusCode());
+        assertEquals(200,response.statusCode());
 
         //verify content type
-        Assertions.assertEquals("application/json",response.contentType());
+        assertEquals("application/json",response.contentType());
 
         //verify json body contains Fidole
         Assertions.assertTrue(response.body().asString().contains("Fidole"));
@@ -82,13 +85,13 @@ public class SpartanGetRequests {
     @Test
     public void test3(){
         //send request and save response inside the response object
-        Response response = RestAssured.when().get(baseUrl + "/api/hello");
+        Response response = when().get(baseUrl + "/api/hello");
 
         //verify status code 200
-        Assertions.assertEquals(200,response.statusCode());
+        assertEquals(200,response.statusCode());
 
         //verify content type
-        Assertions.assertEquals("text/plain;charset=UTF-8",response.contentType());
+        assertEquals("text/plain;charset=UTF-8",response.contentType());
 
         //verify we have headers named date
         //we use hasHeaderWithname method to verify header exist or not - it returns boolean
@@ -99,8 +102,8 @@ public class SpartanGetRequests {
         System.out.println(response.header("Date"));
 
         //verify content length is 17
-        Assertions.assertEquals("17",response.header("Content-Length"));
+        assertEquals("17",response.header("Content-Length"));
         //verify body is "Hello from Sparta"
-        Assertions.assertEquals("Hello from Sparta",response.body().asString());
+        assertEquals("Hello from Sparta",response.body().asString());
     }
 }

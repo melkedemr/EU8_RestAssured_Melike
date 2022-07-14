@@ -7,15 +7,15 @@ import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
 import static io.restassured.RestAssured.baseURI;
-import static io.restassured.RestAssured.given;
-import static org.junit.jupiter.api.Assertions.assertEquals;
+import static io.restassured.RestAssured.*;
+import static org.junit.jupiter.api.Assertions.*;
 
 public class SpartanNegativeGetTest {
 
     @BeforeAll
     public static void init(){
         //save baseurl inside this variable so that we dont need to type each http method.
-        baseURI = "http://44.202.119.26:8000";
+        baseURI = "http://34.230.72.55:8000";
     }
 
     /*TASK
