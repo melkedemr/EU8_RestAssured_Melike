@@ -1,6 +1,6 @@
 package com.melnac.day3;
 
-import com.cybertek.utilities.SpartanTestBase;
+import com.melnac.utilities.SpartanTestBase;
 import io.restassured.http.ContentType;
 import io.restassured.response.Response;
 import org.junit.jupiter.api.DisplayName;
