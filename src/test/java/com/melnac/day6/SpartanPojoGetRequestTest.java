@@ -1,8 +1,8 @@
 package com.melnac.day6;
 
-import com.cybertek.pojo.Search;
-import com.cybertek.pojo.Spartan;
-import com.cybertek.utilities.SpartanTestBase;
+import com.melnac.pojo.Search;
+import com.melnac.pojo.Spartan;
+import com.melnac.utilities.SpartanTestBase;
 import io.restassured.http.ContentType;
 import io.restassured.path.json.JsonPath;
 import io.restassured.response.Response;
@@ -101,6 +101,7 @@ public class SpartanPojoGetRequestTest extends SpartanTestBase {
         System.out.println(spartanList.get(1).getName());
 
     }
+
 
 
 }

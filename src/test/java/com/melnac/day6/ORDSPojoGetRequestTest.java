@@ -52,11 +52,10 @@ public class ORDSPojoGetRequestTest extends HRTestBase {
         ignore non used fields
 
      */
-
     @DisplayName("GET request to region only some fields test")
     @Test
     public void regionPojoTest(){
-        //send a get request and save everthing inside the regions object
+        //send a get request and save everything inside the regions object
         //since we prepare pojo also for the all properties we dont need to use any path so as() method is enough
         Regions regions = get("/regions").then().statusCode(200).extract().response().as(Regions.class);
 
