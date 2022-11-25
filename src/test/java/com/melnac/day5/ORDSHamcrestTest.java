@@ -32,7 +32,6 @@ public class ORDSHamcrestTest extends HRTestBase {
                 .get("/employees")
                 .then()
                 .statusCode(200)
-                .statusCode(200)
                 .body("items.job_id",everyItem(equalTo("IT_PROG")))
                 .body("items.first_name",containsInRelativeOrder("Alexander","Bruce","David","Valli","Diana")) //contains with order
                 .body("items.email",containsInAnyOrder("VPATABAL","DAUSTIN","BERNST","AHUNOLD","DLORENTZ")) //contains without order
